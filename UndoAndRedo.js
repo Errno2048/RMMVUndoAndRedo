@@ -119,7 +119,7 @@ function UndoManager () {
         if (currentState && events && events.length > 0) {
             if (regexEventNamePattern) {
                 var matched = events.some((event) => {
-                    return regex.test(event.event().name);
+                    return regexEventNamePattern.test(event.event().name);
                 });
                 if (matched) {
                     UndoManager.save(currentState);
